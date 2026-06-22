@@ -1,25 +1,4 @@
-<!--
-
-author:   Volker Göhler, Simon Hörtzsch
-email:    volker.goehler@informatik.tu-freiberg.de
-version:  0.0.2
-language: de
-narrator: Deutsch Female
-
-edit: true
-date: 2026-06-19
-
-comment:  Übung Softwareentwicklung 06 -- Template
-
-import: https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
-
-link:   https://raw.githubusercontent.com/vgoehler/LiaScript_CSS_Provider/refs/heads/main/dist/university.css
-
-tags: [Sommersemester2026, Softwareentwicklung, Übung06]
-
--->
-
-[![LiaScript Course](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Ifi-Softwareentwicklung-SoSe2026/exercise-06/refs/heads/main/README.md)
+[![LiaScript Course](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Ifi-Softwareentwicklung-SoSe2026/exercise-06-TAugustL/refs/heads/main/README.md)
 
 # Aufgabe 06
 
