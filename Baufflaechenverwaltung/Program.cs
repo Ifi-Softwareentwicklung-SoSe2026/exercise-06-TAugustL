@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
@@ -82,6 +82,15 @@ namespace Baufflaechenverwaltung
     {
         public string Bezeichnung { get; set; } = string.Empty;
         public List<Bauflaeche> Bauflaechen { get; set; } = new List<Bauflaeche>();
+
+        public void PrintFlaechen()
+        {
+            Console.WriteLine("Flure | Größe | Lage | Nutzung | Bebaubar | BPlan Nr. | Bodenrichtwert | Eigentuemer | Status");
+            Console.WriteLine("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––");
+            foreach (Bauflaeche f in Bauflaechen) {
+                Console.WriteLine($"{f.FlurstueckNummer} | {f.Groesse} | {f.Lage} | {f.AktuelleNutzung} | {f.Bebaubarkeit} | {f.BPlanNummer} | {f.Bodenrichtwert} | {f.Eigentuemer} | {f.Status}");
+            }
+        }
     }
 
     public class Bauvorhaben
@@ -170,6 +179,8 @@ namespace Baufflaechenverwaltung
 
             Console.WriteLine($"Bauvorhaben '{vorhaben.Titel}' Status: {vorhaben.Status}");
             Console.WriteLine($"Fläche {flaeche1.FlurstueckNummer} Status: {flaeche1.Status}");
+
+            grundstueck.PrintFlaechen();
 
             vorhaben.SaveToJSON("Bauvorhaben.json");
             flaeche1.SaveToJSON("Bauflaeche.json");
