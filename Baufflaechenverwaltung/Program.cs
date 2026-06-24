@@ -44,6 +44,9 @@ namespace Baufflaechenverwaltung
 
         public void FlaecheReservieren()
         {
+            if (Status == FlaechenStatus.Bebaut) {
+                return;
+            }
             Status = FlaechenStatus.Reserviert;
         }
     }
