@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Text.Json;
 
@@ -134,6 +135,27 @@ namespace Baufflaechenverwaltung
 
     class Program
     {
+        public static void SaveVorhabenToTXT(string filePath, List<Bauvorhaben> vorhaben) {
+            StringBuilder sb = new();
+
+            foreach (Bauvorhaben v in vorhaben) {
+                sb.AppendLine($"––– {v.Titel} –––");
+                sb.AppendLine($"Antragsteller:   {v.Antragsteller.Name}, {v.Antragsteller.Kontaktdaten}, {v.Antragsteller.Firma}");
+                sb.AppendLine($"Nutzung:         {v.GeplanteNutzung}");
+                sb.AppendLine($"Beginn:          {v.Beginn}");
+                sb.AppendLine($"Fertigstellung:  {v.Fertigstellung}");
+                sb.AppendLine($"Status:          {v.Status}");
+                sb.Append($"Flächen: ");
+                foreach (Bauflaeche f in v.ZugeordneteFlaechen) {
+                    sb.Append($"{f.Lage},");
+                }
+                sb.AppendLine();
+                sb.AppendLine();
+            }
+
+            File.WriteAllText(filePath, sb.ToString());
+        } 
+
         static void Main(string[] args)
         {
             Bauvorhaben vorhaben = new();
@@ -184,6 +206,8 @@ namespace Baufflaechenverwaltung
 
             vorhaben.SaveToJSON("Bauvorhaben.json");
             flaeche1.SaveToJSON("Bauflaeche.json");
+
+            SaveVorhabenToTXT("VorhabenListe.txt", new List<Bauvorhaben> {vorhaben});
         }
     }
 }
