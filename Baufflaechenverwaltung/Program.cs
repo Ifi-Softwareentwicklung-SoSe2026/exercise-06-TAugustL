@@ -140,7 +140,7 @@ namespace Baufflaechenverwaltung
 
             foreach (Bauvorhaben v in vorhaben) {
                 sb.AppendLine($"––– {v.Titel} –––");
-                sb.AppendLine($"Antragsteller:   {v.Antragsteller}");
+                sb.AppendLine($"Antragsteller:   {v.Antragsteller.Name}, {v.Antragsteller.Kontaktdaten}, {v.Firma});
                 sb.AppendLine($"Nutzung:         {v.GeplanteNutzung}");
                 sb.AppendLine($"Beginn:          {v.Beginn}");
                 sb.AppendLine($"Fertigstellung:  {v.Fertigstellung}");
